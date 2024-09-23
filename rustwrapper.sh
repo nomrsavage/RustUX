@@ -12,7 +12,7 @@ tail -f ./rustserverlog.txt | grep "Server startup complete" &
 # whatever this means
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`dirname $0`/RustDedicated_Data/Plugins:`dirname $0`/RustDedicated_Data/Plugins/x86_64
 #starting=true
-steam-run ./RustDedicated +server.identity "server1" +rcon.web false +rcon.port 28016 +rcon.password RCur2vtPyRSTXh34Qksq4pLUns3CyJ9S2YlfXSiXFolWz8VM1j &
+steam-run ./RustDedicated +server.identity "server1" +server.port 28015 +server.level "Procedural Map" +rcon.web false +rcon.port 28016 +rcon.password RCur2vtPyRSTXh34Qksq4pLUns3CyJ9S2YlfXSiXFolWz8VM1j &
 # theoretically -batchmode can be ommitted, (not a command or smth in logs??)
 
 # rcon wrapped
