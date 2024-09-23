@@ -18,7 +18,7 @@ cd ./wrapped
 if [[ ! -d ./steamcmd ]];
 then
 mkdir steamcmd
-curl -L "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - -C ./steamcmd
+curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - -C ./steamcmd
 fi
 
 # install/update and verify rust server installation
