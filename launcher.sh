@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash --pure
+#! nix-shell -p steam-run rcon rsync
 
 # This is the primary launcher file: meaning this is what you would execute to start the server.
 # The primary goal of this project is to introduce a declarative system that leaves the important configurations
@@ -37,7 +39,7 @@ cd ../
 # sync declarative config directory, extremely important probably ig
 rsync --exclude serverauto.cfg --del -r ./cfg/ ./wrapped/rust/server/server1/cfg/
 
-# uses nixpkgs idk i should probably make the launcher pure as well or just get rid of this altogether who cares
-export NIXPKGS_ALLOW_UNFREE=1
-nix-shell --pure ./dependencies.nix --run "./rustwrapper.sh"
-exit $?
+# uses nixpkgs idk i should probably make the launcher pure as well or just get rid of this altogether who cares (i actually did this!)
+#export NIXPKGS_ALLOW_UNFREE=1
+#nix-shell --pure ./dependencies.nix --run "./rustwrapper.sh"
+
